@@ -14,7 +14,8 @@ logs/
 /media/
 
 # config
-WordReview/config.conf
+# arnold comment 20230825
+# WordReview/config.conf
 
 # PyInstaller
 WordReview/build/
