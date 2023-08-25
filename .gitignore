@@ -28,3 +28,6 @@ data/
 /pypi/
 WordReview.wiki/
 *_ig.*
+
+# arnold add 20230825 滤除所有虚拟环境文件夹
+.venv*/
