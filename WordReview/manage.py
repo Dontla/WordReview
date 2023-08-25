@@ -63,6 +63,26 @@ def enable_browser_with_delay(argv, _t=None):
             # webbrowser.open_new("http://localhost" + port_with_colon + "/app_name/")  # open app index page
 
 
+# def main():
+#     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'WordReview.settings')
+#     try:
+#         from django.core.management import execute_from_command_line
+#     except ImportError as exc:
+#         raise ImportError(
+#             "Couldn't import Django. Are you sure it's installed and "
+#             "available on your PYTHONPATH environment variable? Did you "
+#             "forget to activate a virtual environment?"
+#         ) from exc
+
+#     if Is_child_processing() and config.getboolean('custom', 'auto_open_browser'):
+#         import threading
+#         t = threading.Thread(
+#             target=enable_browser_with_delay, args=(sys.argv, 1))
+#         t.start()
+#         del t
+
+#     execute_from_command_line(sys.argv)
+    
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'WordReview.settings')
     try:
@@ -80,6 +100,9 @@ def main():
             target=enable_browser_with_delay, args=(sys.argv, 1))
         t.start()
         del t
+
+    if len(sys.argv) == 2 and sys.argv[1] == 'runserver':
+        sys.argv.append('0.0.0.0:8000')
 
     execute_from_command_line(sys.argv)
 
